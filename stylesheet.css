@@ -68,11 +68,11 @@ input.placeholder {
 }
 
 #addBtn:hover {
-  background: #33733f;
-  color: rgb(184, 183, 183);
+  background: #59c96e;
+  color: rgb(255, 255, 255);
   transition: all 0.3s ease;
   cursor: pointer;
-  transform: translateY(2px);
+  transform: translateY(1px);
 }
 
 li {
@@ -83,7 +83,7 @@ li {
   margin-right: 100px;
   margin-top: 5px;
   margin-bottom: 10px;
-  background-color: rgb(221, 220, 220);
+  background-color: rgb(204, 204, 204);
   color: black;
   border: 1px solid rgb(163, 163, 163);
 }
@@ -136,11 +136,11 @@ li:hover {
 
 .removeBtn:hover {
   background: #202020;
-  color: rgb(184, 183, 183);
+  color: rgb(255, 255, 255);
   transition: all 0.3s ease;
   cursor: pointer;
-  transform: translateY(2px);
-  border: solid #000000 1px;
+  transform: translateY(1px);
+  border: solid #c4c4c4 1px;
 }
 
 li .delete {
@@ -159,13 +159,15 @@ li .delete {
 }
 
 li .delete:hover {
-  background-color: #a0251c;
+  background-color: #8a0a01;
+  border: 1px solid #ffffff;
   transition: all 0.5s ease;
   cursor: pointer;
 }
 
 #tasksDone li .delete:hover {
-  background-color: #a0251c;
+  background-color: #8a0a01;
+  border: 1px solid #242424;
 }
 
 .showBtn {
@@ -184,10 +186,11 @@ li .delete:hover {
 .active,
 .showBtn:hover {
   background: #202020;
-  color: rgb(184, 183, 183);
+  color: rgb(255, 255, 255);
   transition: all 0.3s ease;
   cursor: pointer;
-  transform: translateY(2px);
+  border: solid #c4c4c4 1px;
+  transform: translateY(1px);
 }
 
 .wrapper-show {
