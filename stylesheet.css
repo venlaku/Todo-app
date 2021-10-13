@@ -105,8 +105,12 @@ ul {
   text-decoration-thickness: 2px;
 }
 
+#tasksDone :hover {
+  background-color: rgb(46, 46, 46);
+}
+
 #tasksDone li :hover {
-  background-color: rgba(34, 34, 34, 0.356);
+  background-color: rgba(46, 46, 46);
 }
 
 #tasksDone li {
