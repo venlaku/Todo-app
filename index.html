@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Todo List</title>
+    <link rel="shortcut icon" type="image/png" href="outline_assignment_black_24dp.png""/>
+
+    <link rel="stylesheet" href="stylesheet.css" type="text/css">    
+  </head>
+  <body>
+    <div class="container">
+      <img src="outline_assignment_black_24dp.png" alt="icon of list" id ="iconPicture">
+      <br>
+      <h1>Todo List</h1>
+        <input type="text" id="newTask" placeholder="Write your tasks here...">
+        <button id=addBtn onclick="addTodo()">Add</button>
+        <div id="wrapper-show">     
+          <button class="showBtn active" onclick="showAll()">All</button>
+          <button class="showBtn" onclick="showActive()">Active</button>
+          <button class="showBtn" onclick="showCompleted()">Done</button>
+        </div>
+        <p>Tasks</p>
+        <ul id="tasksTodo">
+        </ul>
+        <ul id="tasksDone">
+        </ul>
+    </div>
+    <div class="wrapper">     
+      <button class=removeBtn onclick="removeDone()">Remove Completed</button>
+      <button class=removeBtn onclick="removeAll()">Remove All</button>
+    </div>
+    <script type="text/javascript" src="app.js"></script>
+
+  </body>
+</html>
