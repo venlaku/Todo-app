@@ -122,6 +122,7 @@ function removeDone() {
     var deleteAll = confirm("Do you really want to remove all the tasks?");
     if (deleteAll == true) {
       document.getElementById("tasksTodo").innerHTML =""
+      document.getElementById("tasksDone").innerHTML=""
       updateLocalStorage()
     }
 }
