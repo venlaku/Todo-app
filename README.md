@@ -1,4 +1,3 @@
 Tekijä : Venla Kuosmanen
 
-
-![todolist](https://user-images.githubusercontent.com/72703581/137897332-693f2a45-34ea-462b-88a0-c4ade9ddcb8c.png)
+![todolist](https://user-images.githubusercontent.com/72703581/137901743-53a2085d-8d63-428f-b034-8bd98efc3bc9.png)
