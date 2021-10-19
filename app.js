@@ -155,7 +155,7 @@ function removeDone() {
 }
   
   //Empty Todo-list when Remove All is clicked. Ask confirmation before removing all. Saved in local storage
-  function removeAll() {
+function removeAll() {
     var deleteAll = confirm("Do you really want to remove all the tasks?");
     //if user clicks okay returns true. Gives and empty strings for both lists
     if (deleteAll == true) {
@@ -201,9 +201,9 @@ for (var i = 0; i < buttons.length; i++) {
      // Currently clicked button is marked as active class. Default active class button is All (look index.html)
     var current = document.getElementsByClassName("active");
     if (current.length > 0) { 
-        current[0].className = current[0].className.replace("active", "");
+        current[0].className = current[0].className.replace(" active", "");
     }
     //Clicked button is marked as active class
-    this.className += "active";
+    this.className += " active";
     });
 }
