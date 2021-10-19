@@ -24,18 +24,22 @@ h1 {
   color: rgb(255, 255, 255);
   font-weight: 800;
   font-size: 25px;
-  border-bottom: 6px double rgb(59, 59, 59);
   padding: 0px 0 10px;
   text-align: center;
 }
 
-p {
-  color: rgb(241, 241, 241);
+h2 {
+  border-bottom: 6px double rgb(59, 59, 59);
   font-size: 20px;
+  padding: 10px 0 10px;
+}
+
+#taskCounter {
+  font-size: 14px;
 }
 
 #iconPicture {
-  margin-top: 10px;
+  margin-top: 30px;
 }
 
 input {
@@ -43,7 +47,7 @@ input {
   font-size: 16px;
   line-height: 16px;
   height: 16px;
-  padding: 7.5px;
+  padding: 10px;
   margin-bottom: 10px;
   border: 1px solid rgb(94, 94, 94);
   background: #fff;
@@ -63,6 +67,7 @@ input.placeholder {
 
 .forminput {
   box-sizing: border-box;
+  margin-right: 5%;
 }
 
 .forminput #addBtn {
@@ -72,10 +77,11 @@ input.placeholder {
   color: #ffffff;
   font-size: 24px;
   background: #5b9163;
-  padding: 1px 8px;
+  padding: 3.5px 8px;
   border: solid #096e27 1px;
   position: absolute;
   height: max-content;
+  margin-left: 3px;
 }
 
 #addBtn:hover {
@@ -89,8 +95,8 @@ li {
   overflow: hidden;
   text-justify: auto;
   padding: 5px;
-  margin-left: 100px;
-  margin-right: 100px;
+  margin-left: 10%;
+  margin-right: 10%;
   margin-bottom: 10px;
   background-color: rgb(228, 228, 228);
   color: black;
@@ -186,7 +192,7 @@ li .delete:hover {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   color: #ffffff;
   font-size: 12px;
-  background: #585858;
+  background: #4e515a;
   padding: 7px;
   border: solid #222222 1px;
   margin-bottom: 10px;

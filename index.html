@@ -10,7 +10,7 @@
     <div class="container">
       <img src="outline_assignment_black_24dp.png" alt="icon of list" id ="iconPicture">
       <br>
-      <h1>Tasks To Do</h1>
+      <h1>My task list</h1>
         <div class="forminput">
         <input type="text" id="newTask" placeholder="Write your tasks here...">
         <button id=addBtn onclick="addTodo()">+</button>
@@ -20,7 +20,8 @@
           <button class="showBtn" onclick="showActive()">Active</button>
           <button class="showBtn" onclick="showCompleted()">Done</button>
         </div>
-        <p>Tasks</p>
+        <div id="taskCounter"> </div>
+        <h2>Tasks to do</h2>
         <ul id="tasksTodo">
         </ul>
         <ul id="tasksDone">

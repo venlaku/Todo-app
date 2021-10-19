@@ -3,16 +3,18 @@ var newTaskInput=document.getElementById("newTask");
 var tasksTodo=document.getElementById("tasksTodo");
 var tasksDone=document.getElementById("tasksDone");
 
+
 //gets saved data from localstorage. If there is no saved data allows that as well
 var todos = JSON.parse(window.localStorage.getItem('tasks')) || []
 
 for (let i = 0; i < todos.length; i++) {
     var listItem = createNewTaskElement(todos[i].value, todos[i].isDone);
     if(todos[i].isDone){
-        document.getElementById("tasksDone").appendChild(listItem); 
+        document.getElementById("tasksDone").appendChild(listItem);
     } else {
-        document.getElementById("tasksTodo").appendChild(listItem);        
+        document.getElementById("tasksTodo").appendChild(listItem);      
     }
+    taskCount();
 }
 
 //add tasks by pressing enter
@@ -21,6 +23,7 @@ newTaskInput.addEventListener("keyup", function(e) {
         document.getElementById("addBtn").click();
     }
 });
+
 
 //function to create tasks in list. Includes button that ables to delete selected task
 function createNewTaskElement(textInput, isDone){
@@ -39,7 +42,6 @@ function createNewTaskElement(textInput, isDone){
     listItem.dataset.text=textInput;
 	return listItem;
 }
-
 
 //function that adds tasks to list. Also gives warnings when there is no tasks given to input or the input was too short
 function addTodo(){
@@ -63,17 +65,19 @@ function addTodo(){
     }
     //empties input and is ready for new inputTask
     document.getElementById("newTask").value = ""; 
+    taskCount();
 }
 
- //delete selected task from list. Both done and todo are possible to be removed from list
+ //delete selected task from list. Both done and todo are possible to be removed from list. Saved in local storage
 function deleteTask(event) {
-    var doDelete = confirm ("Do you really want to remove this task?")
+    var doDelete = confirm ("Do you really want to remove selected task?")
     if (doDelete === true) {
         this.parentElement.parentElement.removeChild(this.parentElement);
     }      
     this.parentElement.removeEventListener("click", markDone)
     this.parentElement.removeEventListener("click", markTodo)
-    updateLocalStorage()
+    updateLocalStorage();
+    taskCount();
 }
 
 //function that saves data to local storage. Checks both lists tasksDone and tasksTodo
@@ -89,58 +93,76 @@ function updateLocalStorage(){
             value: element.querySelector('span').textContent, isDone: false
         })
     });   
-     window.localStorage.setItem('tasks', JSON.stringify(todo))
+    window.localStorage.setItem('tasks', JSON.stringify(todo));
 }
 
-//check tasks to be completed. Moves to tasksDone list
+
+//task counter that tells user how many tasks are left to do
+function taskCount() {
+    const count = tasksTodo.childElementCount;
+    if (count == 1) {
+        document.getElementById("taskCounter").innerHTML = `<strong>${count}</strong> <small>task left</small>`;         
+    } else if (count == 0) {
+        document.getElementById("taskCounter").innerHTML = `<small>All done!</small>`; 
+    } else {
+        document.getElementById("taskCounter").innerHTML = `<strong>${count}</strong> <small>tasks left</small>`; 
+    }
+}
+
+//check tasks to be completed. Moves to tasksDone list. Saved in local storage
 function markDone(event) {
     document.getElementById("tasksDone").appendChild(this);
     this.removeEventListener("click", markDone);
     this.addEventListener("click", markTodo);
     updateLocalStorage()
+    taskCount();
 }
 
-//ables done tasks to be marked todo again. Moves tasks tasksTodo list
+//ables done tasks to be marked todo again. Moves tasks tasksTodo list. Saved in local storage
 function markTodo(event) {
     document.getElementById("tasksTodo").appendChild(this);
     this.removeEventListener("click", markTodo);
     this.addEventListener("click", markDone);
     updateLocalStorage()
+    taskCount();
 }
 
-//Remove completed tasks when clicking Remove Completed button. Ask confirmation before removing completed
+//Remove completed tasks when clicking Remove Completed button. Ask confirmation before removing completed. Saved in local storage
 function removeDone() {
     var deleteDone = confirm("Do you really want to remove completed the tasks?");
     if  (deleteDone == true) {
       document.getElementById("tasksDone").innerHTML=""
       updateLocalStorage()
+      taskCount();
     }  
 }
   
-  //Empty Todo-list when Remove All is clicked. Ask confirmation before removing all
+  //Empty Todo-list when Remove All is clicked. Ask confirmation before removing all. Saved in local storage
   function removeAll() {
     var deleteAll = confirm("Do you really want to remove all the tasks?");
     if (deleteAll == true) {
       document.getElementById("tasksTodo").innerHTML =""
       document.getElementById("tasksDone").innerHTML=""
       updateLocalStorage()
+      taskCount();
     }
 }
 
+//shows all tasks on the list. This is default. Saved in local storage
 function showAll() {
     document.getElementById("tasksDone").style.display="block";
     document.getElementById("tasksTodo").style.display="block";
     updateLocalStorage()
-    
 }
 
+//when clicked shows only tasks that need to be done aka active tasks. Saved in local storage
 function showActive() {
     document.getElementById("tasksDone").style.display="none";
     document.getElementById("tasksTodo").style.display ="block";
     updateLocalStorage()
-  
 }
 
+//when clicked shows only tasks that are done. Saved in local storage
 function showCompleted() {
     document.getElementById("tasksTodo").style.display ="none";
     document.getElementById("tasksDone").style.display="block";
