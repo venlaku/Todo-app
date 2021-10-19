@@ -1,4 +1,4 @@
-// referring to index making index ids as variants to be used in javascript
+// referring to index.html making index ids as variants to be used in javascript
 var newTaskInput=document.getElementById("newTask");
 var tasksTodo=document.getElementById("tasksTodo");
 var tasksDone=document.getElementById("tasksDone");
