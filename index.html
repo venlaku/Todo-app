@@ -15,17 +15,17 @@
         <input type="text" id="newTask" placeholder="Write your tasks here...">
         <button id=addBtn onclick="addTodo()">+</button>
         </div>
+        <h2>Tasks to do</h2>
         <div id="wrapper-show">     
           <button class="showBtn active" onclick="showAll()">All</button>
           <button class="showBtn" onclick="showActive()">Active</button>
           <button class="showBtn" onclick="showCompleted()">Done</button>
         </div>
-        <div id="taskCounter"> </div>
-        <h2>Tasks to do</h2>
         <ul id="tasksTodo">
         </ul>
         <ul id="tasksDone">
         </ul>
+        <div id="taskCounter"> </div>
     </div>
     <div class="wrapper">     
       <button class=removeBtn onclick="removeDone()">Remove Completed</button>

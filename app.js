@@ -100,11 +100,11 @@ function updateLocalStorage(){
 function taskCount() {
     const count = tasksTodo.childElementCount;
     if (count == 1) {
-        document.getElementById("taskCounter").innerHTML = `<strong>${count}</strong> <small>task left</small>`;         
+        document.getElementById("taskCounter").innerHTML = `<strong>${count}</strong> <small>task left to do</small>`;         
     } else if (count == 0) {
-        document.getElementById("taskCounter").innerHTML = `<small>All done!</small>`; 
+        document.getElementById("taskCounter").innerHTML = `<small>All done! Add new tasks!</small>`; 
     } else {
-        document.getElementById("taskCounter").innerHTML = `<strong>${count}</strong> <small>tasks left</small>`; 
+        document.getElementById("taskCounter").innerHTML = `<strong>${count}</strong> <small>tasks left to do</small>`; 
     }
 }
 
