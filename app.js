@@ -6,7 +6,6 @@ var tasksDone=document.getElementById("tasksDone");
 
 //gets saved data from localstorage. If there is no saved data allows that as well
 var todos = JSON.parse(window.localStorage.getItem('tasks')) || []
-
 for (let i = 0; i < todos.length; i++) {
     var listItem = createNewTaskElement(todos[i].value, todos[i].isDone);
     if(todos[i].isDone){
